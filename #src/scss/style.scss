@@ -1,0 +1,42 @@
+// Mixin
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+// Imports SYS
+@import "fonts";
+@import "normalize";
+@import "main";
+@import "media";
+
+// Imports Component
+
+// Main variables settings
+$color: #333;
+$font-size: 16px; 
+$font: "";
+$size_container: 1280px;
+
+
+// Style Body
+body{
+	color: $color;
+	font-size: $font-size;
+	font-family: $font;
+}
+
+// Container
+.container{
+	width: $size_container;
+	margin: 0 auto;
+}
+
+// ul, li, a
+ul{list-style:none;}
+li{display:block;}
+a{text-decoration:none}
